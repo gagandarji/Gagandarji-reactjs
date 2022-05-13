@@ -13,7 +13,7 @@ import { GlobalContext } from "../context/Provider";
 
 
 export async function getStaticProps() { 
-  const res = await allProducts()
+  const res = await allProducts();
   // .catch(err => {
   //   const dataerr = { data: { err: `${JSON.stringify(err?.response?.status)}` } } 
   //   return dataerr
