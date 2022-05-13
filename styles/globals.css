@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #ececec;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.header{
+  background: #fff;
+  border-radius: 15px;
+}
+.header h3{
+  font-weight: 600;
+  font-style: italic;
+  font-size: 25px;
+  cursor: pointer;
+}
+.rounded-xxl{
+  border-radius: 15px;
+}
+.search::placeholder,.selectedDrop {
+  color: #979a94;
+}
+.max-width-250{
+  width: 250px;
+}
+.productimage{
+  background: #fff;
+  padding: 15px;
+}
+.w-250-h-300{
+  min-width: 280px;
+  height: 300px;
+}
+.text-sxl{
+  font-size: 35px;
+}
+.dtlProdcon{
+  width:100%;
+  padding-top: 20px;
+  border-top:1px solid #000 ;
+  margin-top: 40px;
+}
