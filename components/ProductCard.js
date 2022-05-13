@@ -4,9 +4,9 @@ export default function ProductCard(props) {
   const products = props.prodlist; 
   return (
     <>
-      {/* {products.map((product) => ( ) )} */}
+      {/* {products.map((product) => ( ) )} */} 
 
-      {products.filter(prod => prod.name.includes(props.search) && prod.category.includes(props.filterCat)).map(product => (
+      {products.filter(prod => prod.name.toLowerCase().includes(props.search.toLowerCase()) && prod.category.toLowerCase().includes(props.filterCat.toLowerCase())).map(product => (
           <Link key={product.id} href={"products/"+product.id}>
           <div key={product.id} className="group relative cursor-pointer">
             <div className="w-full h-60 min-h-50 bg-gray-200 aspect-w-1 aspect-h-1 rounded-xxl overflow-hidden group-hover:opacity-75 lg:h-50 lg:aspect-none">
@@ -24,9 +24,9 @@ export default function ProductCard(props) {
                     : product.name}
                 </h3>
                  
-                <p className="text-xl font-medium text-gray-900 text-center">
+                {/* <p className="text-xl font-medium text-gray-900 text-center">
                  {product.category}
-                </p>
+                </p> */}
                  
                 <p className="text-xl font-medium text-gray-900 text-center">
                   $ {product.price}
