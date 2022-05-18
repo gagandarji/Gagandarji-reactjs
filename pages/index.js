@@ -42,7 +42,7 @@ export default function Home({ allprods, categories }) {
   };
 
   useEffect(() => {
-    category[0] ? setCatsel(category[0]) : "";
+     setCatsel(category[0]) 
   }, [category]);
 
   const handleSearch = (e) => {
