@@ -36,7 +36,7 @@ const creatproduct = (categories) => {
     category: "",
     description: "",
     avatar: "",
-    DeveloperEmail: "gagan.darji@gmail.com",
+    developerEmail:"gagan.darji@gmail.com",
   });
 
   const onProductInputChange = (e) => {

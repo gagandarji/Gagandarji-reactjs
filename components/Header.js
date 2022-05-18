@@ -1,6 +1,6 @@
-import Link from "next/link"
+import Link from "next/link" 
 
-const Header = () => {
+const Header = () => { 
   return (
 
     <div className="container mx-auto px-4 mt-4 mb-3">

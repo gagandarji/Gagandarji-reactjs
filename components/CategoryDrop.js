@@ -3,6 +3,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { GlobalContext } from "../context/Provider";
+import { useRouter } from "next/router";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -11,23 +12,30 @@ function classNames(...classes) {
 export default function CategoryDrop(props) {
   const { loading, category } = useContext(GlobalContext);
  
+const router = useRouter();
 
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState();
   const cats = props.catlist; 
 
 
   const onSelection = (e) => { 
     setSelected(e);
-    category[1](e);  
+    category[1](e);
+    props.onSel(e);
+    router.push("?category="+e);
+  };
+  const offSelection = (e) => { 
+    setSelected("");
+    category[1]("");
+    props.onSel("");
+    router.push("/");
   };
 
   useEffect(() => {
-    category[1](selected); 
+    category[1](selected);  
   }, [selected]);
 
-  // useEffect(() => {
-  //   setSelected(category[0]); 
-  // },[loading]);
+ 
 
 
   return (
@@ -39,7 +47,7 @@ export default function CategoryDrop(props) {
             `${" inline-flex justify-center w-full rounded-md border border-gray-300 shadow-md px-4 py-2 bg-white text-sm font-medium justify-between text-gray-700 hover:bg-gray-50 focus:outline-none"}`
           }
         >
-          {selected ? selected : "Categories"}
+          {selected ? selected : (props.selectedCat?props.selectedCat:"Categories")}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -55,7 +63,7 @@ export default function CategoryDrop(props) {
       >
         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-            <Menu.Item onClick={() => setSelected("")}>
+            <Menu.Item onClick={() => offSelection("")}>
               {({ active }) => (
                 <a
                   href="#"

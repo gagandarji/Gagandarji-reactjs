@@ -2,8 +2,9 @@
 import axios from "../config/instance"; 
 
 
-export const allProducts = async() => {  
-    const response = await axios.get("/products/",{
+export const allProducts = async(cat) => {  
+    const response = await axios.get("/products",{
+        params: { "category":cat},
         headers: {
             "Content-Type": "application/json" 
         } 

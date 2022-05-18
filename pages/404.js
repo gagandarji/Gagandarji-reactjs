@@ -8,6 +8,7 @@ import { useEffect } from "react";
 export default function Custom404(){
   
   const router = useRouter(); 
+  
 useEffect(() => {   
   setTimeout(() => {
     router.push("/")
@@ -32,7 +33,7 @@ useEffect(() => {
                 <Link href="/">
                   <Button text="Homepage"/>
                 </Link>
-                <Link href="/creatproduct">
+                <Link href="creatproduct">
                   <Button text="Create Product"/>
                 </Link>
               </div>

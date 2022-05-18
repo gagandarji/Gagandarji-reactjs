@@ -9,7 +9,7 @@ const Details = (props) => {
 
   const handleFilterCat = (e) => { 
     category[1](e); 
-    router.push("/");
+    router.push("/?category="+e);
   }; 
 
   return (
